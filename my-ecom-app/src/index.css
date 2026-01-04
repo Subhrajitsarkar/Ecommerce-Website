@@ -1,0 +1,63 @@
+/* Basic site-wide styling - adjust as you like */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #fff;
+  color: #222;
+}
+
+
+/* hero */
+.hero {
+  background: #7f7f7f;
+  color: white;
+  padding: 3rem 0 4rem;
+  margin-bottom: 2rem;
+}
+
+
+.section-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.75rem;
+}
+
+
+.product-card {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+
+.product-card .image-wrap {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+
+.product-card img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.product-card .price {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+
+.btn-add {
+  font-weight: 700;
+  color: white;
+}
+
+
+.site-footer {
+  background: #66d1ee;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
