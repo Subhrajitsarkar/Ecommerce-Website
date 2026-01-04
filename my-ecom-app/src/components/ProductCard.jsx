@@ -16,14 +16,15 @@ export default function ProductCard({ product }) {
                     {product.title}
                 </Card.Title>
 
-                <div className="product-footer">
+                <div className="product-footer d-flex align-items-center justify-content-between mt-3">
                     <span className="price">${product.price}</span>
                     <Button
                         variant="info"
                         size="sm"
                         onClick={() => addToCart(product)}
+                        className="btn-add"
                     >
-                        ADD TO CART
+                        Add
                     </Button>
                 </div>
             </Card.Body>

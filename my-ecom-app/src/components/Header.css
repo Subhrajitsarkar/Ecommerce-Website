@@ -1,0 +1,35 @@
+.main-header {
+    background: black;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+}
+
+.cart-btn {
+    border: 1px solid #56ccf2;
+    background: transparent;
+    color: #56ccf2;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}

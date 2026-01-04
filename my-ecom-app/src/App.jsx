@@ -1,61 +1,30 @@
-import React, { useContext, useState } from 'react'
-import { Navbar, Nav, Container, Button } from 'react-bootstrap'
-import Products from './pages/Products'
-import Cart from './components/Cart'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Store from './pages/Store'
+import About from './pages/About'
+import { useContext } from 'react'
 import { CartContext } from './context/CartContext'
+import Cart from './components/Cart'
 
 export default function App() {
-  const [showCart, setShowCart] = useState(false)
-  const { totalQuantity } = useContext(CartContext)
+  const { isCartOpen, closeCart } = useContext(CartContext)
 
   return (
     <>
-      {/* HEADER */}
-      <Navbar bg="dark" variant="dark" sticky="top">
-        <Container>
-          <Navbar.Brand>The Generics</Navbar.Brand>
+      <Header />
 
-          <Nav className="mx-auto">
-            <Nav.Link>HOME</Nav.Link>
-            <Nav.Link>STORE</Nav.Link>
-            <Nav.Link>ABOUT</Nav.Link>
-          </Nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
 
-          <Button variant="outline-info" onClick={() => setShowCart(true)}>
-            Cart {totalQuantity}
-          </Button>
-        </Container>
-      </Navbar>
+      <Footer />
 
-      {/* HERO */}
-      <header className="hero text-center">
-        <Container>
-          <h1 className="display-2">The Generics</h1>
-        </Container>
-      </header>
-
-      {/* PRODUCTS */}
-      <Products />
-
-      <div className="text-center my-5">
-        <Button variant="secondary" onClick={() => setShowCart(true)}>
-          See the cart
-        </Button>
-      </div>
-
-      <Cart show={showCart} onClose={() => setShowCart(false)} />
-
-      {/* FOOTER */}
-      <footer className="site-footer text-center">
-        <Container>
-          <h2>The Generics</h2>
-          <div className="social-icons">
-            <i className="bi bi-facebook"></i>
-            <i className="bi bi-instagram"></i>
-            <i className="bi bi-spotify"></i>
-          </div>
-        </Container>
-      </footer>
+      <Cart show={isCartOpen} onClose={closeCart} />
     </>
   )
 }
