@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Navbar, Nav, Container, Button } from 'react-bootstrap'
 import Products from './pages/Products'
 import Cart from './components/Cart'
+import { CartContext } from './context/CartContext'
 
 export default function App() {
   const [showCart, setShowCart] = useState(false)
+  const { totalQuantity } = useContext(CartContext)
 
   return (
     <>
@@ -14,16 +16,13 @@ export default function App() {
           <Navbar.Brand>The Generics</Navbar.Brand>
 
           <Nav className="mx-auto">
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Store</Nav.Link>
-            <Nav.Link>About</Nav.Link>
+            <Nav.Link>HOME</Nav.Link>
+            <Nav.Link>STORE</Nav.Link>
+            <Nav.Link>ABOUT</Nav.Link>
           </Nav>
 
-          <Button
-            variant="outline-info"
-            onClick={() => setShowCart(true)}
-          >
-            Cart 0
+          <Button variant="outline-info" onClick={() => setShowCart(true)}>
+            Cart {totalQuantity}
           </Button>
         </Container>
       </Navbar>
@@ -38,14 +37,12 @@ export default function App() {
       {/* PRODUCTS */}
       <Products />
 
-      {/* SEE CART BUTTON */}
       <div className="text-center my-5">
-        <Button variant="secondary" size="lg" onClick={() => setShowCart(true)}>
+        <Button variant="secondary" onClick={() => setShowCart(true)}>
           See the cart
         </Button>
       </div>
 
-      {/* CART MODAL */}
       <Cart show={showCart} onClose={() => setShowCart(false)} />
 
       {/* FOOTER */}

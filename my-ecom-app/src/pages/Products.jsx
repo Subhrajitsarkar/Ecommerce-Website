@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ProductCard from '../components/ProductCard'
 
-const productsArr = [
+const musicProducts = [
     {
         title: 'Colors',
         price: 100,
@@ -25,20 +25,49 @@ const productsArr = [
     },
 ]
 
+const merchProducts = [
+    {
+        title: 'T-Shirt',
+        price: 19.99,
+        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Shirt.png',
+    },
+    {
+        title: 'Coffee Cup',
+        price: 6.99,
+        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Cofee.png',
+    },
+]
+
 export default function Products() {
     return (
-        <section className="py-5">
-            <Container>
-                <h2 className="text-center mb-5">MUSIC</h2>
+        <>
+            {/* MUSIC */}
+            <section className="py-5">
+                <Container>
+                    <h2 className="text-center mb-5">MUSIC</h2>
+                    <Row>
+                        {musicProducts.map((product, index) => (
+                            <Col md={6} className="mb-4" key={index}>
+                                <ProductCard product={product} />
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
 
-                <Row>
-                    {productsArr.map((product, index) => (
-                        <Col key={index} md={6} lg={3} className="mb-4">
-                            <ProductCard product={product} />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </section>
+            {/* MERCH */}
+            <section className="py-5">
+                <Container>
+                    <h2 className="text-center mb-5">MERCH</h2>
+                    <Row>
+                        {merchProducts.map((product, index) => (
+                            <Col md={6} className="mb-4" key={index}>
+                                <ProductCard product={product} />
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
+        </>
     )
 }
