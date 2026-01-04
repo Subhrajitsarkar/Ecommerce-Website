@@ -1,0 +1,77 @@
+.home-hero {
+    background: #777;
+    color: #fff;
+    padding: 3.5rem 0 4.5rem;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-cta {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.hero-play .play-btn {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.play-icon {
+    font-size: 1.6rem;
+}
+
+.tours-title {
+    font-family: serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+.tour-row {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.col-date {
+    width: 80px;
+    font-weight: 600;
+}
+
+.col-city {
+    width: 200px;
+    color: #666;
+}
+
+.col-venue {
+    padding-left: 1rem;
+    color: #333;
+}
+
+.col-action {
+    width: 140px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .col-city {
+        width: 120px;
+    }
+
+    .col-action {
+        width: 110px;
+    }
+}
