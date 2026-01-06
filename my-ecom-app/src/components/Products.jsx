@@ -2,30 +2,66 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ProductCard from './ProductCard'
 
-const productsArr = [
+export const productsArr = [
     {
         id: 1,
         title: 'Colors',
         price: 100,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+        images: [
+            'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+        ],
+        reviews: [
+            { author: 'John Doe', comment: 'Great product!' },
+            { author: 'Jane Smith', comment: 'I love it!' },
+        ],
     },
     {
         id: 2,
         title: 'Black and white Colors',
         price: 50,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+        images: [
+            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+        ],
+        reviews: [
+            { author: 'Peter Jones', comment: 'Not bad.' },
+            { author: 'Mary Williams', comment: 'Could be better.' },
+        ],
     },
     {
         id: 3,
         title: 'Yellow and Black Colors',
         price: 70,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+        images: [
+            'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+        ],
+        reviews: [
+            { author: 'David Brown', comment: 'Amazing!' },
+        ],
     },
     {
         id: 4,
         title: 'Blue Color',
         price: 100,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+        images: [
+            'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+            'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+        ],
+        reviews: [
+            { author: 'Susan Green', comment: 'Just what I was looking for.' },
+            { author: 'Tom Wilson', comment: 'Perfect!' },
+            { author: 'Emily Davis', comment: 'Highly recommended.' },
+        ],
     },
 ]
 
