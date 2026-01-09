@@ -1,10 +1,29 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
     const [isCartOpen, setIsCartOpen] = useState(false)
+    const [token, setToken] = useState(null)
+
+    useEffect(() => {
+        const storedToken = localStorage.getItem('authToken')
+        if (storedToken) {
+            setToken(storedToken)
+        }
+    }, [])
+
+    const setAuthToken = (newToken) => {
+        setToken(newToken)
+        localStorage.setItem('authToken', newToken)
+    }
+
+    const logout = () => {
+        setToken(null)
+        localStorage.removeItem('authToken')
+    }
+
 
     const addToCart = (product) => {
         setCartItems((prevItems) => {
@@ -48,6 +67,9 @@ export const CartProvider = ({ children }) => {
                 isCartOpen,
                 openCart,
                 closeCart,
+                token,
+                setAuthToken,
+                logout,
             }}
         >
             {children}

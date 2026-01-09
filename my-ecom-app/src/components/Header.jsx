@@ -20,6 +20,9 @@ export default function Header() {
                 <NavLink to="/about" className="nav-link">
                     ABOUT
                 </NavLink>
+                <NavLink to="/login" className="nav-link">
+                    LOGIN
+                </NavLink>
                 <NavLink to="/contact" className="nav-link">
                     CONTACT US
                 </NavLink>
