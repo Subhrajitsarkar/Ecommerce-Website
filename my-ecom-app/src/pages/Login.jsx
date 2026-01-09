@@ -18,7 +18,7 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const token = await userCredential.user.getIdToken();
-      setAuthToken(token);
+      setAuthToken(token, userCredential.user.email);
       history.push('/store');
     } catch (error) {
       setError('Failed to log in. Please check your email and password.');
